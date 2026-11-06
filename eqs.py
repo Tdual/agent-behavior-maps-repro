@@ -58,6 +58,10 @@ EQS = {
             "ヘリンジャー距離の二乗はバッタチャリヤ係数で書ける"),
     "geo": (r"d_{\mathrm{FR}} \;=\; 2\,\arccos\left(\mathrm{BC}\right)",
             "Fisher-Rao 測地線距離はバッタチャリヤ係数の逆余弦の2倍"),
+    "log": (r"\mathrm{Log}_b(p) \;=\; \frac{\theta}{\sin\theta}"
+            r"\left(\sqrt{p} - \mathrm{BC}\,\sqrt{b}\right),"
+            r"\qquad \theta \;=\; \arccos\left(\mathrm{BC}\right)",
+            "基準点 b における p の対数写像。弦を接平面に射影し、長さを弧長シータに伸ばす"),
     "bounds": (r"\mathrm{KL} \;\approx\; 2\|\sqrt{p}-\sqrt{q}\|^2 "
                r"\qquad\qquad \|\sqrt{p}-\sqrt{q}\|^2 \;\leq\; \mathrm{KL}",
                "局所では KL はヘリンジャー距離の二乗の2倍に近く、大域では常にその下限"),
