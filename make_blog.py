@@ -21,6 +21,9 @@ CSS = """
   h3 { font-size:12.5pt; margin:34px 0 10px; color:var(--accent); }
   p { margin:0 0 15px; }
   a { color:#1c4f8c; }
+  .eq { margin:22px 0; text-align:center; }
+  .eq svg { max-width:100%; height:auto; }
+  .eqnote { display:block; font-size:9.5pt; color:var(--mute); margin-top:5px; }
   table { width:100%; border-collapse:collapse; margin:18px 0 8px; font-size:9.5pt; }
   th { background:#f2f3f7; padding:7px 10px; border:1px solid var(--line);
        text-align:left; font-weight:600; white-space:nowrap; }
@@ -82,6 +85,13 @@ def svg(name, cap=None, alt=None):
     return f"<figure>{s}{c}</figure>"
 
 
+def eq(name, note=None):
+    """A display formula, rendered from TeX by eqs.py. It carries role/aria-label."""
+    s = open(os.path.join(HERE, "viz", f"eq_{name}.svg"), encoding="utf-8").read()
+    n = f'<span class="eqnote">{note}</span>' if note else ""
+    return f'<div class="eq">{s}{n}</div>'
+
+
 def fig(name, cap):
     """A hand-authored diagram from figs.py. It already carries role/aria-label."""
     s = open(os.path.join(HERE, "viz", name), encoding="utf-8").read()
@@ -97,7 +107,8 @@ A('<h1>動かさずに LLM エージェントの違いを測る。<br>その距�
 A('<p class="sub">Agent Behavior Maps — 共通の参照軌跡を採点させるだけで、エージェントを座標の点として並べる手法を手元で再現し、その座標を &alpha; 表現の1パラメータ族から選び直す</p>')
 A('<p class="meta">2026年11月5日 &middot; '
   'arXiv:2610.30014 の小規模再現（6つの LLM・9つのハーネス）&middot; '
-  'ローカル計算のみ・費用ゼロ</p>')
+  'ローカル計算のみ・費用ゼロ &middot; '
+  'コード: <a href="https://github.com/Tdual/agent-behavior-maps-repro">Tdual/agent-behavior-maps-repro</a></p>')
 
 A('''<div class="toc"><ol>
 <li><a href="#s1">何が提案されているのか</a></li>
@@ -229,8 +240,7 @@ A('<p>参照軌跡を全部なめると、1体のエージェントにつき193�
   'エージェント <code>i</code> の参照軌跡 <code>r</code> のステップ <code>t</code> での値が '
   '<code>&#8467;<sub>i,rt</sub> = log &pi;<sub>i</sub>(a<sub>rt</sub> | h<sub>rt</sub>)</code> '
   'であり、座標は次のようになる。</p>')
-A('<pre><code>z_i = M^(-1/2) (&#8467;_i &minus; mean(&#8467;_i))        '
-  'M = 193（参照ステップの総数）</code></pre>')
+A(eq("step", "この再現では M = 193（参照ステップの総数）"))
 A('<p><b>中心化</b>は、エージェントごとの一律のずれを落とす。'
   'どのステップでも全体に低い確率を出す癖のあるモデルは、'
   'ベクトル全体が下に平行移動しているだけで、'
@@ -240,13 +250,17 @@ A('<p><b><code>M^(-1/2)</code> で割る</b>のは、距離を1ステップあ�
   '集合の大きさが違う測定を並べられる。</p>')
 A('<p>この結果、エージェント1体が193次元の点になる。'
   '2体の距離は、ベクトルの差のユークリッドノルムである。</p>')
-A('<pre><code>d(i, j) = ‖z_i &minus; z_j‖ '
-  '= sqrt( (1/193) &Sigma;_t (&#8467;_{i,t} &minus; &#8467;&#x304;_i '
-  '&minus; &#8467;_{j,t} + &#8467;&#x304;_j)² )</code></pre>')
-A('<p>軌跡単位の座標も定義されている。ステップごとの値を軌跡内で合計して24個の数にし、'
-  '<code>N^(-1/2)</code>（<code>N</code> は軌跡の本数）で割る。'
-  '1本の軌跡の全体としての尤度を1つの座標にする作りで、ステップ版より情報が粗い。'
-  '論文は軌跡版のほうが KL の水準を大きく外すと書いており、'
+A(eq("stepd"))
+A('<p>ここまでが<b>ステップ版</b>である。論文はもう1つ<b>軌跡版</b>を定義している。'
+  'ステップごとの値を軌跡内で合計して軌跡1本につき1つの数にし、'
+  '軌跡の本数の平方根で割る。</p>')
+A(eq("traj", "この再現では N = 24（参照軌跡の本数）"))
+A(eq("trajd"))
+A('<p>KL と比べるときは、どちらの距離もそのままでは使わない。'
+  '次の2つが論文の推定量で、<code>T&#x304;</code> は参照軌跡の平均手数である。</p>')
+A(eq("est", "左がステップ版、右が軌跡版。どちらも対称KL と比べる"))
+A('<p>軌跡版は1本の軌跡の全体としての尤度を1つの座標にする作りで、'
+  'ステップ版より情報が粗い。論文は軌跡版のほうが KL の水準を大きく外すと書いており、'
   '本再現でも水準比が 4.09倍から 7.33倍に悪化した。</p>')
 
 A('<h3>論文の座標と、もう1つの座標</h3>')
@@ -258,6 +272,8 @@ A('<p>論文の Appendix A.1 は、その行動に正規化されるトークン
   'Table 4 の100モデルの列にも「文法マスクなし、各モデルの chat template」とある。'
   'つまり図1(a) に描かれている座標は、許容行動の集合で正規化していない、'
   'トークン対数確率の素の和である。</p>')
+A(eq("pi", "Appendix A.1 の式(6)。行動の確率は、その行動に正規化されるトークン列すべての和"))
+A(eq("mask", "式(5)。文法マスクは、各位置で許される語の上で確率を割り直す"))
 A('<p>本再現では両方を計算して並べた。</p>')
 A(tbl(["呼び方", "中身", "性質"],
       [["<code>raw</code>", "記録された行動のトークン対数確率の和",
@@ -292,9 +308,8 @@ A('<p>手順は3段である。まず各エージェントに評価タスクを�
   '<b>全エージェントに採点させる</b>。許容行動リストがあるので、'
   'ある履歴での1ステップあたりの KL は10項の和で閉じた形で出る。'
   '最後にそれを軌跡に沿って足し、タスクで平均し、向きを入れ替えた分も足して対称化する。</p>')
-A('<pre><code>KL(i ‖ j) = &Sigma;_t &Sigma;_a &pi;_i(a|h_t) '
-  'log( &pi;_i(a|h_t) / &pi;_j(a|h_t) )     h_t は i 自身の軌跡\n'
-  '対称KL     = KL(i‖j) + KL(j‖i)</code></pre>')
+A(eq("kl", "<i>h</i><sub>t</sub> は <i>i</i> 自身の軌跡"))
+A(eq("ksym"))
 A('<p>履歴が <code>i</code> 自身のものであることが肝心である。'
   'KL は <code>&pi;_i</code> で重み付けした量なので、'
   '<code>i</code> が実際に訪れる状態で測らなければ定義に合わない。'
@@ -507,11 +522,9 @@ A('<p>&epsilon; は許容行動すべてにわたる対数比の最大値なの�
 A('<h3>&alpha;=0 で成り立つこと</h3>')
 A('<p>写像 <code>p &rarr; 2&radic;p</code> は、確率単体の Fisher&ndash;Rao 計量から'
   '半径2の球面への厳密な等長写像である。テイラー展開も局所性の仮定も入らない。</p>')
-A('<pre><code>‖&radic;p &minus; &radic;q‖² = 2(1 &minus; BC),   '
-  'BC = &Sigma; &radic;(p q)\n'
-  'Fisher&ndash;Rao 測地線 = 2 arccos(BC)\n'
-  '局所: KL &asymp; 2‖&radic;p &minus; &radic;q‖²\n'
-  '大域: ‖&radic;p &minus; &radic;q‖² &le; KL      （常に下限。過大評価しない）</code></pre>')
+A(eq("hel"))
+A(eq("geo"))
+A(eq("bounds", "左は局所での近似、右は大域で常に成り立つ下限。KL を過大評価しない"))
 A('<p>第2節で、座標には参照の生成器が取った1個の行動しか残らないと書いた。'
   '方策ベクトルを丸ごと保存しておけば、各参照履歴での '
   '<code>&radic;p</code> を繋いだベクトルが作れる。'
@@ -838,8 +851,11 @@ A('''<ul>
 </ul>''')
 
 A('<p>測定に使ったコードと全数値は '
-  '<code>~/Workspace/agent-behavior-maps/</code> に置いてある。'
-  '節ごとの詳細な表は、同じディレクトリの技術レポート（<code>report.html</code>）にある。'
+  '<a href="https://github.com/Tdual/agent-behavior-maps-repro">Tdual/agent-behavior-maps-repro</a> に置いてある。'
+  '環境（<code>env.py</code>）は1ステップごとの許容行動の一覧を持つので、'
+  'ステップごとの KL は推定ではなく閉じた式で出る。'
+  '帰結の一覧は <code>FINDINGS.md</code>、節ごとの詳細な表は '
+  '<code>python3 make_report.py</code> で作る技術レポートにある。'
   'すべてローカルの Mac（MPS、fp32）で動き、外部 API は使っていないので費用は 0 である。</p>')
 
 A('</body></html>')
