@@ -100,11 +100,11 @@ def fig(name, cap):
 
 A(f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">'
   f'<meta name="viewport" content="width=device-width,initial-scale=1">'
-  f'<title>動かさずに測った LLM エージェントの距離は、情報幾何で見ると KL ではなかった</title>'
+  f'<title>LLM エージェントを走らせずに方策ごと埋め込む &mdash; その距離は本当に KL なのか</title>'
   f'<style>{CSS}</style></head><body>')
 
-A('<h1>動かさずに LLM エージェントの違いを測る。<br>その距離は情報幾何で見ると KL ではなかった</h1>')
-A('<p class="sub">Agent Behavior Maps — 共通の参照軌跡を採点させるだけで、エージェントを座標の点として並べる手法を手元で再現し、その座標を &alpha; 表現の1パラメータ族から選び直す</p>')
+A('<h1>LLM エージェントを走らせずに方策ごと埋め込む。<br>その距離は本当に KL なのか</h1>')
+A('<p class="sub">共通の参照軌跡を教師強制で採点させるだけで、エージェントが1点に決まる。Agent Behavior Maps を手元で再現し、座標距離と実測の軌跡 KL を突き合わせた。順序は追うが、水準は4倍ずれる</p>')
 A('<p class="meta">2026年11月5日 &middot; '
   'arXiv:2610.30014 の小規模再現（6つの LLM・9つのハーネス）&middot; '
   'ローカル計算のみ・費用ゼロ &middot; '
