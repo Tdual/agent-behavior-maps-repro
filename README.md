@@ -54,8 +54,12 @@ distance to its nearest neighbour.
 
 This reproduction carries both coordinates, so the choice is measured rather than assumed.
 `raw` is the summed token log-probability of the recorded action -- the paper's unmasked
-coordinate -- and `norm` is the softmax over the admissible set, which is Eq. (6) with one
-canonical tokenisation. Inside the paper's scope (one model, nine harnesses, 36 pairs)
+coordinate -- and `norm` renormalises over the admissible set, as a softmax over those
+summed log-probabilities. Both make the per-action probabilities sum to one over the
+admissible set, but `norm` is not Eq. (6): the paper renormalises at each token position
+and then multiplies, which divides by the product of the per-position normalisers, while
+`norm` divides by the sum over whole actions. They are two different policies on the same
+admissible set. Inside the paper's scope (one model, nine harnesses, 36 pairs)
 `norm` correlates with the measured trajectory KL at Pearson 0.963 / Spearman 0.964 and
 `raw` at 0.939 / 0.922.
 
