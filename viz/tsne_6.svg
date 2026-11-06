@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="100%" style="max-width:720px;display:block;margin:0 auto;font-family:Hiragino Sans,Noto Sans CJK JP,sans-serif">
+<rect width="720" height="480" fill="#fff"/>
+<text x="360.0" y="22" font-size="13.5" font-weight="bold" fill="#16213e" text-anchor="middle">6つの LLM・BASE ハーネス（論文 図1(a) と同じ設定）（t-SNE・perplexity 3・seed 0）</text>
+<text x="360.0" y="39" font-size="10" fill="#666" text-anchor="middle">距離の順位 Spearman 0.821（10種の中央値）　種どうしの Procrustes 差 中央値 0.000</text>
+<circle cx="271.5" cy="172.8" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="426.2" cy="240.0" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="306.4" cy="272.0" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="458.9" cy="104.0" r="5.5" fill="#b4531f" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="261.1" cy="412.0" r="5.5" fill="#b4531f" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="382.5" cy="330.6" r="5.5" fill="#2e7d32" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<text x="281.5" y="176.8" font-size="10.5" fill="#333" text-anchor="start">smol135-it</text>
+<text x="436.2" y="244.0" font-size="10.5" fill="#333" text-anchor="start">smol135</text>
+<text x="316.4" y="276.0" font-size="10.5" fill="#333" text-anchor="start">smol360-it</text>
+<text x="468.9" y="108.0" font-size="10.5" fill="#333" text-anchor="start">qwen05-it</text>
+<text x="271.1" y="416.0" font-size="10.5" fill="#333" text-anchor="start">qwen05</text>
+<text x="392.5" y="334.6" font-size="10.5" fill="#333" text-anchor="start">pythia410</text>
+<circle cx="17" cy="468" r="4.5" fill="#1f6fb4"/>
+<text x="26" y="472" font-size="10" fill="#555">SmolLM2</text>
+<circle cx="110" cy="468" r="4.5" fill="#b4531f"/>
+<text x="119" y="472" font-size="10" fill="#555">Qwen2.5</text>
+<circle cx="203" cy="468" r="4.5" fill="#2e7d32"/>
+<text x="212" y="472" font-size="10" fill="#555">Pythia</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="100%" style="max-width:720px;display:block;margin:0 auto;font-family:Hiragino Sans,Noto Sans CJK JP,sans-serif">
+<rect width="720" height="480" fill="#fff"/>
+<text x="360.0" y="22" font-size="13.5" font-weight="bold" fill="#16213e" text-anchor="middle">14エージェントの地図（α=1 norm・中心化・古典的MDS）</text>
+<text x="360.0" y="39" font-size="10" fill="#666" text-anchor="middle">2次元が保つ配置の割合 63.6%　距離の再現 Pearson 0.908 / Spearman 0.933</text>
+<circle cx="234.5" cy="176.1" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="258.4" cy="150.4" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="252.1" cy="184.7" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="485.8" cy="168.7" r="5.5" fill="#b4531f" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="176.3" cy="215.9" r="5.5" fill="#b4531f" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="223.4" cy="177.6" r="5.5" fill="#2e7d32" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="518.6" cy="160.5" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="459.0" cy="175.3" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="426.6" cy="183.2" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="506.1" cy="143.3" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="543.7" cy="104.0" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="489.3" cy="412.0" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="357.1" cy="370.2" r="5.5" fill="#c08000" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="428.3" cy="275.5" r="5.5" fill="#c08000" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<text x="244.5" y="167.1" font-size="10.5" fill="#333" text-anchor="start">smol135-it</text>
+<text x="268.4" y="141.4" font-size="10.5" fill="#333" text-anchor="start">smol135</text>
+<text x="262.1" y="188.7" font-size="10.5" fill="#333" text-anchor="start">smol360-it</text>
+<text x="475.8" y="159.7" font-size="10.5" fill="#333" text-anchor="end">qwen05-it</text>
+<text x="186.3" y="219.9" font-size="10.5" fill="#333" text-anchor="start">qwen05</text>
+<text x="213.4" y="181.6" font-size="10.5" fill="#333" text-anchor="end">pythia410</text>
+<text x="528.6" y="164.5" font-size="10.5" fill="#333" text-anchor="start">h4-T0.9</text>
+<text x="469.0" y="191.3" font-size="10.5" fill="#333" text-anchor="start">h4-T1.1</text>
+<text x="416.6" y="187.2" font-size="10.5" fill="#333" text-anchor="end">h4-T1.25</text>
+<text x="516.1" y="147.3" font-size="10.5" fill="#333" text-anchor="start">h2</text>
+<text x="553.7" y="108.0" font-size="10.5" fill="#333" text-anchor="start">h1</text>
+<text x="499.3" y="416.0" font-size="10.5" fill="#333" text-anchor="start">h0</text>
+<text x="367.1" y="374.2" font-size="10.5" fill="#333" text-anchor="start">n4</text>
+<text x="438.3" y="279.5" font-size="10.5" fill="#333" text-anchor="start">s4</text>
+<circle cx="17" cy="468" r="4.5" fill="#1f6fb4"/>
+<text x="26" y="472" font-size="10" fill="#555">SmolLM2</text>
+<circle cx="110" cy="468" r="4.5" fill="#b4531f"/>
+<text x="119" y="472" font-size="10" fill="#555">Qwen2.5</text>
+<circle cx="203" cy="468" r="4.5" fill="#2e7d32"/>
+<text x="212" y="472" font-size="10" fill="#555">Pythia</text>
+<circle cx="285" cy="468" r="4.5" fill="#1f6fb4"/>
+<text x="294" y="472" font-size="10" fill="#555">窓</text>
+<circle cx="312" cy="468" r="4.5" fill="#c08000"/>
+<text x="321" y="472" font-size="10" fill="#555">プロンプト</text>
+<circle cx="383" cy="468" r="4.5" fill="#840791"/>
+<text x="392" y="472" font-size="10" fill="#555">温度</text>
+</svg>

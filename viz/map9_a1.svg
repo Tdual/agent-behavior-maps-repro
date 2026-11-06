@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 440" width="100%" style="max-width:660px;display:block;margin:0 auto;font-family:Hiragino Sans,Noto Sans CJK JP,sans-serif">
+<rect width="660" height="440" fill="#fff"/>
+<text x="330.0" y="22" font-size="13.5" font-weight="bold" fill="#16213e" text-anchor="middle">9エージェント（α=1 log・許容集合で正規化・中心化）</text>
+<text x="330.0" y="39" font-size="10" fill="#666" text-anchor="middle">2次元が保つ配置の割合 73.4%　距離の再現 Pearson 0.953 / Spearman 0.981</text>
+<circle cx="265.0" cy="166.1" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="248.3" cy="169.9" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="278.7" cy="163.1" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="295.1" cy="159.4" r="5.5" fill="#840791" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="235.2" cy="207.3" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="184.7" cy="264.3" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="450.0" cy="372.0" r="5.5" fill="#1f6fb4" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="475.3" cy="104.0" r="5.5" fill="#c08000" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<circle cx="373.5" cy="122.9" r="5.5" fill="#c08000" fill-opacity="0.85" stroke="#fff" stroke-width="1.2"/>
+<text x="275.0" y="182.1" font-size="10.5" fill="#333" text-anchor="start">h4</text>
+<text x="238.3" y="173.9" font-size="10.5" fill="#333" text-anchor="end">h4-T0.9</text>
+<text x="268.7" y="154.1" font-size="10.5" fill="#333" text-anchor="end">h4-T1.1</text>
+<text x="305.1" y="163.4" font-size="10.5" fill="#333" text-anchor="start">h4-T1.25</text>
+<text x="245.2" y="211.3" font-size="10.5" fill="#333" text-anchor="start">h2</text>
+<text x="194.7" y="268.3" font-size="10.5" fill="#333" text-anchor="start">h1</text>
+<text x="460.0" y="376.0" font-size="10.5" fill="#333" text-anchor="start">h0</text>
+<text x="485.3" y="108.0" font-size="10.5" fill="#333" text-anchor="start">n4</text>
+<text x="383.5" y="126.9" font-size="10.5" fill="#333" text-anchor="start">s4</text>
+<circle cx="17" cy="428" r="4.5" fill="#1f6fb4"/>
+<text x="26" y="432" font-size="10" fill="#555">窓</text>
+<circle cx="44" cy="428" r="4.5" fill="#c08000"/>
+<text x="53" y="432" font-size="10" fill="#555">プロンプト</text>
+<circle cx="115" cy="428" r="4.5" fill="#840791"/>
+<text x="124" y="432" font-size="10" fill="#555">温度</text>
+</svg>
