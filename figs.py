@@ -210,8 +210,8 @@ def ratio():
                      f'stroke="currentColor" stroke-width="2" opacity="0.38"/>')
         o.append(f'<circle cx="{X(med)}" cy="{y}" r="5.5" fill="currentColor" '
                  f'stroke="#fff" stroke-width="2"/>')
-        if med < 1.5:   # left of the dot, clear of the 1.0 line
-            o.append(txt(X(med) - 12, y + 4, f"{med:.2f}", 11, anchor="end", weight="600"))
+        if med < 1.5:   # above and to the left, clear of the 1.0 line
+            o.append(txt(X(med) - 7, y - 13, f"{med:.2f}", 11, anchor="end", weight="600"))
         else:
             o.append(txt(X(med), y - 13, f"{med:.2f}", 11, weight="600"))
         o.append(txt(X(hi_) + 10, y + 4, f"上端 {hi_:.2f}", 9.5, anchor="start", op=0.6))
@@ -236,7 +236,7 @@ def sphere():
     o.append(f'<path d="M{P(150)[0]:.1f},{P(150)[1]:.1f} '
              f'A{r},{r} 0 0 1 {P(30)[0]:.1f},{P(30)[1]:.1f}" fill="none" '
              f'stroke="currentColor" stroke-width="1.6" opacity="0.4"/>')
-    o.append(txt(P(150)[0] + 2, P(150)[1] - 12,
+    o.append(txt(P(150)[0] + 2, P(150)[1] + 20,
                  "&#8214;z&#8214; = 1 の球面（22体すべてが乗る）", 11,
                  anchor="start", op=0.7))
     bx, by = P(130)
